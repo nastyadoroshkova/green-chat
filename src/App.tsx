@@ -13,7 +13,7 @@ const App: React.FC = () => {
   console.log(user, 'user');
 
   useEffect(() => {
-    dispatch(createConnection());
+    // dispatch(createConnection());
   }, [dispatch]);
 
   return (
