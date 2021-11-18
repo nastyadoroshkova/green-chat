@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from "react";
 
-function App() {
+import Chat from "./components/chat/Chat";
+import { createConnection } from './store/actions';
+import {useDispatch, useSelector} from "react-redux";
+import UserCreationForm from "./components/UserCreationForm";
+
+import "./App.scss";
+
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state:any) => state.user.user);
+  console.log(user, 'user');
+
+  useEffect(() => {
+    dispatch(createConnection());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="app">
+        {
+          user.id ? <Chat/> : <UserCreationForm />
+        }
+      </div>
   );
 }
 

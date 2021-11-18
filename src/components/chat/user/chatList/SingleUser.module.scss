@@ -1,0 +1,39 @@
+.wrapper {
+  padding: 20px;
+  display: flex;
+}
+
+.wrapper:hover {
+  background-color: #f7f7f79c;
+  cursor: pointer;
+}
+
+.userImg {
+  text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+  border-radius: 50%;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  background-color: #79d3f3;
+  color: #fff;
+}
+
+.userInfo {
+  flex: 3;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.message,
+.time {
+  flex: 1;
+  color: #b2b2b2;
+  font-size: 14px;
+  line-height:1.4;
+}
